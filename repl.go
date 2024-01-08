@@ -10,14 +10,28 @@ import (
 func startRepl() {
 
 	scanner := bufio.NewScanner(os.Stdin)
-
+	
 	for {
-
+		
 		fmt.Print("Your Input > ")
-
+		
 		scanner.Scan()
 		text := scanner.Text()
-		fmt.Println("You Typed >>> ", text)
+		cleaned := cleanInput(text)
+
+		if len(cleaned) == 0 {
+			continue
+		}
+
+		command := cleaned[0]
+
+			switch command {
+			case "exit":
+				os.Exit(0)
+			}
+		default:
+			fmt.Println("Invalid command")
+		
 	}
 }
 
