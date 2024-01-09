@@ -28,9 +28,10 @@ func startRepl() {
 			switch command {
 			case "exit":
 				os.Exit(0)
+			
+			default:
+				fmt.Println("Invalid command")
 			}
-		default:
-			fmt.Println("Invalid command")
 		
 	}
 }
