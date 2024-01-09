@@ -13,6 +13,10 @@ func TestCleanInput(t *testing.T) {
 			input:    "hello world",
 			expected: []string{"hello", "world"},
 		},
+		{
+			input:    "HELLO world",
+			expected: []string{"hello", "world"},
+		},
 	}
 
 	for _, c := range cases {
