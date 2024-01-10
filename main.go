@@ -1,12 +1,19 @@
 package main
 
+import "github.com/Captain-Leftovers/pokedexcli/internal/pokeapi"
 
-import(
-	
-)
+type config struct {
+	pokeapiClient       pokeapi.Client
+	nextLocationAreaURL *string
+	prevLocationAreaURL *string
+}
 
 func main() {
 
-	startRepl()
-	
+	cfg := config{
+		pokeapiClient: pokeapi.NewClient(),
+	}
+
+	startRepl(&cfg)
+
 }
