@@ -35,7 +35,7 @@ func (c *Client) ListLocationAreas(pageURL *string) (LocationAreasResp, error) {
 		return locationAreasResp, nil
 	}
 
-	fmt.Println("cache not found :(")
+	fmt.Println("cache not found :( -> -> fetching ... <- <-")
 
 	req, err := http.NewRequest("GET", fullURL, nil)
 
